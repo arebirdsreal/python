@@ -10,32 +10,32 @@ number_of_numbers = int(input("How many numbers do you want in your passwodd? ")
 number_of_symbols = int(input("how many symbols do you want in your password? "))
 
 
-password = ""
 random_char = ""
-random_num = 1
+random_num = 0
+
+# we want to use the shuffle() function which works only on lists, so storing the password in list
+password_list =[]
 
 for i in range(0, number_of_letters):
     random_char = random.choice(alphabet)
-    password += random_char
+    password_list += random_char
+    #could have used password_list.append(random_char) as well instead of "+="
 
 for i in range(0, number_of_numbers):
     random_num = random.choice(numbers)
-    password += str(random_num)
+    password_list += str(random_num)
+    #could have used password_list.append(random_char) as well instead of "+="
+
 
 for i in range(0, number_of_symbols):
     random_symbol = random.choice(symbols)
-    password += str(random_symbol)
+    password_list += str(random_symbol)
 
-print(password)
+# using the shuffle() function
+random.shuffle(password_list)
 
-for i in password:
-    print(password[random.randint(0, len(password)-1)])
-
-
-
-
-
-
-
-
-
+# putting each character from the list to the string
+password = ""
+for character in password_list:
+    password += character
+print(f"Password: {password}")

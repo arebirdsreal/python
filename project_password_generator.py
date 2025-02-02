@@ -14,15 +14,15 @@ password = ""
 random_char = ""
 random_num = 1
 
-for i in range(1, number_of_letters+1):
+for i in range(0, number_of_letters):
     random_char = random.choice(alphabet)
     password += random_char
 
-for i in range(1, number_of_numbers+1):
+for i in range(0, number_of_numbers):
     random_num = random.choice(numbers)
     password += str(random_num)
 
-for i in range(1, number_of_symbols+1):
+for i in range(0, number_of_symbols):
     random_symbol = random.choice(symbols)
     password += str(random_symbol)
 

@@ -12,3 +12,12 @@ for letter in chosen_word:
     else:
         print("Wrong")
 
+placeholder = ""
+word_length = len(chosen_word)
+for i in range(0, word_length):
+    placeholder += "_"
+print(placeholder)
+
+display = ""
+
+

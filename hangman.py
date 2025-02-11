@@ -11,7 +11,8 @@ for i in range(0, word_length):
 print(placeholder)
 
 number_of_guesses = 0
-while number_of_guesses < 7
+while number_of_guesses < 7:
+    pass #bookmark
 
 
 guess = input("Guess letter: ")

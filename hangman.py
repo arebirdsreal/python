@@ -10,12 +10,16 @@ for position in range(word_length):
     placeholder += "_"
 print(placeholder)
 
-game_over = False
+game_over = 0
 lives = 7
 correct_guesses = []
 
 while not game_over:
     guess = input("Guess a letter: ").lower()
+    if len(guess) > 1:
+        print("Please enter only one letter.")
+        continue
+
     display = ""
 
 
@@ -23,21 +27,25 @@ while not game_over:
         if letter == guess:
             display += letter
             correct_guesses.append(guess)
+            
         elif letter in correct_guesses:
             display += letter
         else:
+            
             display += "_"
-    else:
+    if guess not in chosen_word:
         lives -= 1
-        print("You have", lives, "lives left.")
+        print("Incorrect guess. You have", lives, "lives left.")
+
+    
     print(display)
 
     if "_" not in display:
         game_over = True
-        print("Congratulations! You've won!")
+        print(f"Congratulations! You've won with {lives} lives left")
     if lives == 0:
         game_over = True
-        print("Sorry, you've lost. The word was:", chosen_word)
+        print("Sorry, you've ran out of lives. The word was:", chosen_word)
 
 
 

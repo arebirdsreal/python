@@ -1,40 +1,43 @@
 import random
 word_list = ["aardvark", "baboon", "camel"]
+
 chosen_word = random.choice(word_list)
 print(chosen_word)
 
 placeholder = ""
-
 word_length = len(chosen_word)
-for i in range(0, word_length):
+for position in range(word_length):
     placeholder += "_"
 print(placeholder)
-list(placeholder)
 
-guess = input("Guess letter: ")
-guess.lower()
+game_over = False
+lives = 7
+correct_guesses = []
 
-number_of_guesses = 0
-while number_of_guesses < 7:
-    for char in chosen_word:
-        if char == guess:
-            print("you got letter/s right")
-            placeholder[char] = guess
+while not game_over:
+    guess = input("Guess a letter: ").lower()
+    display = ""
+
+
+    for letter in chosen_word:
+        if letter == guess:
+            display += letter
+            correct_guesses.append(guess)
+        elif letter in correct_guesses:
+            display += letter
         else:
-            print("The secret word does not contain this letter.")
-            break
-
-
-display = ""
-for letter in chosen_word:
-    if guess == letter:
-        # print("Right")
-        display += letter
+            display += "_"
     else:
-        # print("Wrong")
-        display += "_"
+        lives -= 1
+        print("You have", lives, "lives left.")
+    print(display)
 
-print(display)
+    if "_" not in display:
+        game_over = True
+        print("Congratulations! You've won!")
+    if lives == 0:
+        game_over = True
+        print("Sorry, you've lost. The word was:", chosen_word)
 
 
 

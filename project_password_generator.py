@@ -9,7 +9,6 @@ number_of_letters = int(input("How many letters do you want in your password? ")
 number_of_numbers = int(input("How many numbers do you want in your passwodd? "))
 number_of_symbols = int(input("how many symbols do you want in your password? "))
 
-
 random_char = ""
 random_num = 0
 

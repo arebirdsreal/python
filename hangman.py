@@ -22,7 +22,6 @@ while not game_over:
 
     display = ""
 
-
     for letter in chosen_word:
         if letter == guess:
             display += letter

@@ -20,11 +20,7 @@ caesar(text, shift, direction)
 
 
 
-
-
-
-
-#for decoding:
+#logic for decoding:
 """def decrypt(cipher_text, shift_amount):
     original_text = ""
     for letter in cipher_text:
@@ -32,9 +28,8 @@ caesar(text, shift, direction)
         shifted_position = shifted_position % len(alphabet)
         original_text += alphabet[shifted_position]
     print(f"Here is the decoded string: {original_text}")
+"""
 
-    #for encoding: same but using shifted_position = alphabet.index(letter) + shift_amount
-
-caesar(text,shift)"""
+#logic for encoding: same but using shifted_position = alphabet.index(letter) + shift_amount, (addition instead of subtraction)
 
 

@@ -1,2 +1,4 @@
-#28-03-2025
-print("Hello")
+import math
+def deal_card():
+  cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
+  return 

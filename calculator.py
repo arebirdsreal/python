@@ -1,43 +1,55 @@
 import calculator_art as art
-print(art.art)
-def calc(operator, operand_1, operand_2):
-    if operator == '+':
-        return operand_1 + operand_2
-    elif operator == '-':
-        return operand_1 - operand_2
-    elif operator == '*':
-        return operand_1 * operand_2
-    elif operator == '/':
-        return operand_1 / operand_2
-choice = ''
-choice = input("+ for addition \n- for subtraction \n* for multiplication \n"
-                "/ for division: \n")
-a,b = input("Enter the 2 operands seperated by comma: \n").split(',')
-operand_1, operand_2 = int(a), int(b)
 
-want_to_continue = ''
-while want_to_continue != 'n':
-    result = calc(operator=choice, operand_1=operand_1, operand_2=operand_2)
-    print(f"{result}\n\n")
-    want_to_continue = input("Do you want to continue? Enter 'y' or 'n' only.")
-    if want_to_continue == 'y' or want_to_continue == 'n':
-            None
-    else:
-        print("Strictly enter 'y' or 'n' only")
+def add(num1, num2):
+    """adds num1 and num2"""
+    return num1+num2
+def sub(num1, num2):
+    """subtracts num2 from num1"""
+    return num1-num2
+def multi(num1, num2):
+    """mutliplies num1 with num2"""
+    return num1*num2
+def div(num1, num2):
+    """divides num1 by num2"""
+    return num1/num2
 
+operations = {
+    "+" : add,
+    "-" : sub,
+    "*" : multi,
+    "/" : div
+}
+def calculator():
+    print(art.art)
+    num1 = float(input("Enter First number: \n"))
 
-    while want_to_continue == 'y':
-        choice = input("+ for addition \n, - for subtraction \n, * for multiplication \n, "
-                "/ for division: \n")
-        operand_2 = int(input("Enter second operand: "))
-        result = calc(operator=choice, operand_1=result, operand_2=operand_2)
-        print(result)
-        want_to_continue = input("Do you want to continue? ")
-        if want_to_continue == 'y' or want_to_continue == 'n':
-            None
-        else:
-            print("Strictly enter 'y' or 'n' only")
+    should_accumulate = True
+    while should_accumulate: 
+        for symbol in operations:
+            print(symbol)
+        operation_symbol = input("Enter operation to be performed: ")
+        num2 = float(input("Enter the other number: \n"))
+
+        answer = operations[operation_symbol](num1=num1, num2=num2) 
+        """here: operations[operation_symbol] is the function being called
+            and then the num1 and num2 are the arguments"""
         
+        print(f"{num1} {operation_symbol} {num2} = {answer}")
+        choice = input(f"Enter 'y' to continue performing calculations on answer\n"
+                        "Enter 'n' to start a fresh calculation.")
+        if choice == 'y':
+            num1 = answer
+        else:
+            print("\n"*50)
+            should_accumulate = False
+            calculator()
+calculator()
+            
+
+
+
+
+
 
 
 

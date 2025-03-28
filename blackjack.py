@@ -69,18 +69,3 @@ elif user_score > computer_score:
 else:
    print("DRAW, PUSH")
    exit()
-   
-
-
-
-
-
-   
-if computer_score > user_score:
-    print("COMPUTER Wins")
-else:
-    print("USER Wins")
-
-
-
-

@@ -20,7 +20,7 @@ operations = {
     "/" : div
 }
 def calculator():
-    print(art.art)
+    print(art.themoloch_art)
     num1 = float(input("Enter First number: \n"))
 
     should_accumulate = True

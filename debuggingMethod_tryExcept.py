@@ -1,6 +1,6 @@
 try:
     age = int(input("Enter age: "))
-except:
+except ValueError:
     print("You have typed in an invalid input. Please try again with a numerical input like 12")
     age = int(input("Enter age: "))
 

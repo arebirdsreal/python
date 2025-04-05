@@ -58,7 +58,7 @@ def checkAvailability(choice):
     return True
 
 
-def changeAmountsOfIngredients(choice)
+def changeAmountsOfIngredients(choice):
     requirements = {
         'espresso': {'water': 50, 'coffee': 18},
         'latte': {'water': 200, 'coffee': 24, 'milk': 150},

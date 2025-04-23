@@ -1,5 +1,5 @@
 import calculator_art as art
-
+#3
 print(f"{art.themoloch_art}")
 print("""Use it like a Normal Calculator: 
         IF YOU WISH TO PERFORM MORE CALCULATIONS ON THAT NUMBER, CONTINUE BY ENTERING THE NEXT OPERATION FOLLOWED BY THE OTHER NUMBER""")
